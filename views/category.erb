@@ -1,0 +1,49 @@
+<% @threads.each do |thread| %>
+<h1><%= thread['title'] %></h1>
+<p><%= thread['copy'] %></p>
+<hr>
+<form action='/categories' method='GET'>
+<input type='text' name='_method' value="SUBMIT">
+<input type='text' name='category_id' value="<%= thread['id']%>">
+<button>ADD</button>
+</form>
+<p><%= thread %></p>
+
+
+<% end %>
+<img src="http://i.imgur.com/71AQndd.jpg?1">
+<h3>WHERE HAVE YOU BEEN?</h3>
+
+<div class="main_content">
+<form class="submit" action="/submit" method="post">
+<div class="input-row">
+<label for="name">Places visited: </label>
+<input type="text" name="places visited" />
+</div>
+
+<div class="input-row">
+<input type="submit" value="Submit!" />
+</div>
+
+<div class="main_content">
+<form class="submit" action="/submit" method="post">
+<div class="input-row">
+<label for="name">Places I want to visit: </label>
+<input type="text" name="Places I want to visit" />
+</div>
+
+<div class="input-row">
+<input type="submit" value="Submit!" />
+</div>
+
+<div class="main_content">
+<form class="submit" action="/submit" method="post">
+<div class="input-row">
+<label for="name">My favorite place ever: </label>
+<input type="text" name="My favorite place ever" />
+</div>
+
+<div class="input-row">
+<input type="submit" value="Submit!" />
+</div>
+
