@@ -62,7 +62,7 @@ module Sinatra
     erb :index
     end
 
-     get '/threads' do
+     get "/threads" do
       @threads = conn.exec("SELECT * FROM threads")
       erb :category
     end
