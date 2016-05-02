@@ -4,7 +4,7 @@ module Sinatra
     enable :sessions
    require 'pg'
    require 'bcrypt'
-    db = PG.connect dbname: "travel"
+
 
     def login
     session[:user_id]
