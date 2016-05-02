@@ -29,7 +29,7 @@ module Sinatra
         VALUES ($1, $2)",
         [@email, @password]
       )
-      redirect to("/threads")
+      redirect to("/login")
     end
 
     post "/login" do
