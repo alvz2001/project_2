@@ -29,7 +29,7 @@ module Sinatra
         VALUES ($1, $2)",
         [@email, @password]
       )
-      redirect to("/login")
+      redirect to("/threads")
     end
 
     post "/login" do
@@ -43,7 +43,7 @@ module Sinatra
       if @user && BCrypt::Password::new(@user["password"]) == params[:password]
         "You have successfully logged in"
         session[:user_id] = @user_id
-        redirect to('/threads')
+        redirect to("/threads")
       else
         "Wrong password!!"
         redirect to('/login')
