@@ -2,9 +2,9 @@
 <h1><%= thread['title'] %></h1>
 <p><%= thread['copy'] %></p>
 <hr>
-<form action='/categories' method='GET'>
+<form action='/threads' method='POST'>
 <input type='text' name='_method' value="SUBMIT">
-<input type='text' name='category_id' value="<%= thread['id']%>">
+<input type='text' name='thread_id' value="<%= thread['id']%>">
 <button>ADD</button>
 </form>
 <p><%= thread %></p>
