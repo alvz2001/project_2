@@ -3,6 +3,7 @@ require 'pg'
 require 'pry'
 require 'faker'
 
+
 if ENV["RACK_ENV"] == "production"
     conn = PG.connect(
         dbname: ENV["POSTGRES_DB"],
