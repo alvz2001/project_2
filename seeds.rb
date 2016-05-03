@@ -45,65 +45,60 @@ conn.exec("INSERT INTO users (email, password) VALUES (
   )"
 )
 
-conn.exec("CREATE TABLE threads(
-  id SERIAL PRIMARY KEY,
-  topic VARCHAR(255),
-  user_id INTEGER REFERENCES users(id)
+
+
+
+conn.exec("CREATE TABLE categories(
+    id SERIAL PRIMARY KEY,
+    name VARCHAR(255) NOT NULL
+  )");
+
+
+conn.exec("INSERT INTO categories (name) VALUES (
+   'Places to visit'
   )"
-)
+  )
 
 
-# conn.exec("CREATE TABLE categories(
-#     id SERIAL PRIMARY KEY,
-#     name VARCHAR(255) NOT NULL
-#   )");
+conn.exec("INSERT INTO categories (name) VALUES (
+   'Places visited'
+  )"
+  )
 
-
-# conn.exec("INSERT INTO categories (name) VALUES (
-#    'Places to visit'
-#   )"
-#   )
-
-
-# conn.exec("INSERT INTO categories (name) VALUES (
-#    'Places visited'
-#   )"
-#   )
-
-# conn.exec("INSERT INTO categories (name) VALUES (
-#    'Favorite place'
-#   )"
-#   )
+conn.exec("INSERT INTO categories (name) VALUES (
+   'Favorite place'
+  )"
+  )
 
 
 
 
-# conn.exec("CREATE TABLE places(
-#     id SERIAL PRIMARY KEY,
-#     category_id INTEGER REFERENCES categories(id),
-#     user_id INTEGER REFERENCES users(id),
-#     name VARCHAR(255) NOT NULL,
-#     date_of_visit VARCHAR(255) NOT NULL,
-#     description TEXT NOT NULL
-#   )");
+conn.exec("CREATE TABLE places(
+    id SERIAL PRIMARY KEY,
+    category_id INTEGER REFERENCES categories(id),
+    user_id INTEGER REFERENCES users(id),
+    name VARCHAR(255) NOT NULL,
+    date_of_visit VARCHAR(255) NOT NULL,
+    description TEXT NOT NULL
+  )");
 
-# conn.exec("INSERT INTO places (category_id, user_id, name, date_of_visit, description) VALUES (
-#    '1',
-#    '1',
-#    'Los Angeles',
-#    'May 5, 1999',
-#    'Very sunny and many palm trees'
-#   )"
-#   )
+conn.exec("INSERT INTO places (category_id, user_id, name, date_of_visit, description) VALUES (
+   '1',
+   '1',
+   'Los Angeles',
+   'May 5, 1999',
+   'Very sunny and many palm trees'
+  )"
+  )
 
-# conn.exec("INSERT INTO places (category_id, user_id, name, date_of_visit, description) VALUES (
-#    '2',
-#    '2',
-#    'New York',
-#    'April 23, 2000',
-#    'Very windy and brisk, many tall buildings'
-#   )"
-#   )
+conn.exec("INSERT INTO places (category_id, user_id, name, date_of_visit, description) VALUES (
+   '2',
+   '2',
+   'New York',
+   'April 23, 2000',
+   'Very windy and brisk, many tall buildings'
+  )"
+  )
 
 
 

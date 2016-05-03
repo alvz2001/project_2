@@ -1,5 +1,39 @@
-"Hello World."
-<% @users.each do |user| %>
-<p><%= user %></p>
+
+
+<% @places.each do |place| %>
+  <%= place['name'] %>
 <% end %>
+
+
+<h1> Add a place</h1>
+
+<form action="/places" method="POST">
+  <label>Select a Category</label>
+  <% @categories.each do |category| %>
+    <input type="radio" name="category_id"
+     value=<%=category['id']%>><%= category['name']%> <br>
+  <% end %>
+
+  <label> Write a description </label>
+  <textarea name='description'></textarea>
+
+  <label> What is this place called?</label>
+  <input type='text' name='name'><br>
+
+  <label> When did you visit? (if applicable)</label>
+  <input type="text" name="date_of_visit"><br>
+
+
+  <input type='hidden' name="user_id" value=<%=@user['id']%>>
+
+  <input type="submit" value="Submit">
+</form>
+
+
+
+
+
+
+
+
 

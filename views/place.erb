@@ -1,3 +1,20 @@
 <% @places.each do |place| %>
-<p><%= place %></p>
+    <p><%= place['name'] %></p>
+    <p><%= place['description']%></p>
+
+    <% @users.each do |user| %>
+      <% if user['id'] == place['user_id'] %>
+        <p><%= user['email'] %></p>
+      <% end %>
+    <% end %>
+    <!-- ends users loop -->
+
+    <% @categories.each do |category| %>
+      <% if category['id'] == place['category_id'] %>
+        <p><%= category['name'] %></p>
+      <% end %>
+    <% end %>
+    <!-- ends category loop -->
+<hr>
 <% end %>
+<!-- ends places loop -->

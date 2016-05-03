@@ -6,6 +6,15 @@
 <link href="../css/skeleton.css" rel="stylesheet" type="text/css">
 </head>
 <body>
+
+<% if @user %>
+  <h1> Hi <%= @user['email'] %></h1>
+  <a href="/logout">Logout</a>
+<% else %>
+  <h1> no one is logged in </h1>
+<% end %>
+
+
   <div class="container">
     <%= yield %>
   </div>
